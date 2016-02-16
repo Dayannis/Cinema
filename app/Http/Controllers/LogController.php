@@ -26,7 +26,7 @@ class LogController extends Controller
             return Redirect::to('usuario'); 
         }
         Session::flash('message-error','Datos incorrectos');
-        return Redirect::route('log.index');
+        return Redirect::route('principal');
     }
 
     public function logout()

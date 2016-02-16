@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','FrontController@index');
+Route::get('/', ['as' => 'principal', 'uses' => 'FrontController@index']);
 Route::get('contacto','FrontController@contacto');
 Route::get('reviews','FrontController@reviews');
 Route::get('admin','FrontController@admin');

@@ -33,7 +33,9 @@
             <ul class="nav navbar-top-links navbar-right">
                  <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <span>{!! Auth::user()->name !!}</span>
+                        @if(isset(Auth::user()->name))
+                            <span>{!! Auth::user()->name !!}</span>
+                        @endif
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">

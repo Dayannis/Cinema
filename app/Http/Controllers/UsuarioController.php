@@ -42,7 +42,8 @@ class UsuarioController extends Controller{
         User::create([
             'name'     => $request['name'],
             'email'    => $request['email'],
-            'password' => bcrypt($request['plainPassword_first'])]);
+            'password' => bcrypt($request['password'])
+            ]);
 
         Session::flash('message','Usuario Creado Correctamente');
         return Redirect::to('/usuario');
