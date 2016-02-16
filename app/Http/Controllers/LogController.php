@@ -16,7 +16,7 @@ class LogController extends Controller
 
     public function index()
     {
-        return Redirect::to('/');
+        return Redirect::route('principal');
     }
       
     public function store(LoginRequest $request)
@@ -32,6 +32,6 @@ class LogController extends Controller
     public function logout()
     {
         Auth::logout();
-        return Redirect::to('/');   
+        return Redirect::route('principal');  
     }
 }
