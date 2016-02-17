@@ -14,6 +14,23 @@ function Carga(){
 	});
 }
 
+function Eliminar(btn){
+	var route = "http://localhost/cinema/public/index.php/genero/"+btn.value+"";
+	var token = $("#token").val();
+
+	$.ajax({
+		url      : route,
+		headers  : {'X-CSRF-TOKEN' : token},
+		type     : 'DELETE',
+		dataType : 'json',
+
+		success : function(){
+			Carga();
+			$("#msj-success2").fadeIn();
+		}
+	});
+}
+
 /*En la siguiente función se muestra el contenido del id correspondiente en el listado de los Generos
 cuando se presiona el botón editar*/
 function Mostrar(btn){

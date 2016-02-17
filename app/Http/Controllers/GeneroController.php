@@ -87,6 +87,7 @@ class GeneroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $genre = Genre::delete($id);
+        return response()->json(["mensaje" => "borrado"]);
     }
 }
