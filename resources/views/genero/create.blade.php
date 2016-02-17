@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-{!!Form::open()!!}
+{!!Form::open(array('route' => 'genero.store', 'id' => 'formularioGenero'))!!}
 	<div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style="display:none">
 		<strong>Genero Agregado Correctamente.</strong>
 	</div>
