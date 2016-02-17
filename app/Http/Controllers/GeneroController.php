@@ -1,13 +1,9 @@
 <?php
-
 namespace Cinema\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use Cinema\Http\Requests;
 use Cinema\Http\Controllers\Controller;
 use Cinema\Genre;
-
 class GeneroController extends Controller
 {
     /**
@@ -22,11 +18,11 @@ class GeneroController extends Controller
             $genres->toArray()
             );
     }
-    public function index()
+
+    public function index(Request $request)
     {
         return view('genero.index');
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -36,7 +32,6 @@ class GeneroController extends Controller
     {
         return view('genero.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -51,7 +46,6 @@ class GeneroController extends Controller
             return response()->json(["mensaje" => "creado"]);
         }
     }
-
     /**
      * Display the specified resource.
      *
@@ -62,7 +56,6 @@ class GeneroController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -72,9 +65,8 @@ class GeneroController extends Controller
     public function edit($id)
     {
         $genre = Genre::find($id);
-        return response()->json($genre);
+        return response()->json($genre->toArray());
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -89,7 +81,6 @@ class GeneroController extends Controller
         $genre -> save();
         return response()->json(["mensaje" => "listo"]);
     }
-
     /**
      * Remove the specified resource from storage.
      *
