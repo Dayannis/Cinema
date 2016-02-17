@@ -14,11 +14,11 @@ $("#registro").click(function(e){
 			$("#formularioGenero") indicamos que  busque en la vista lo que tenga como id formularioGenero
 			y cuando lo encuentre busque de ese elemento su attributo llamado action con esto attr('action')
 		*/
-		url:  $("#formularioGenero").attr('action'),
-		type: $("#formularioGenero").attr('method'),
-		headers: {'X-CSRF-TOKEN': token},
-		dataType:'json',
-		data:{genre: dato},
+		url     : $("#formularioGenero").attr('action'),
+		type    : $("#formularioGenero").attr('method'),
+		headers : {'X-CSRF-TOKEN': token},
+		dataType: 'json',
+		data    : {genre: dato},
 
 		success:function(){
 			$("#msj-success").fadeIn();
