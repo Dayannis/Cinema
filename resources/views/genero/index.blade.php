@@ -2,7 +2,7 @@
 	@section('content')
 	@include('genero.modal')
   	<div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style="display:none">
-    		<strong> Género Actualizado Correctamente.</strong>
+    		<strong> Genero Actualizado Correctamente.</strong>
   	</div>
 		<table class="table">
 			<thead>
