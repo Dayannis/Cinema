@@ -44,7 +44,7 @@ function Mostrar(btn){
 
 /**/
 $("actualizar").click(function(){
-	
+
 	var value = $("#id").val();
 	var dato  = $("#genre");
 	var route = "http://localhost/cinema/public/index.php/genero/"+value+"";
