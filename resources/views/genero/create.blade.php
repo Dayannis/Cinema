@@ -1,11 +1,12 @@
 @extends('layouts.admin')
 @section('content')
 {!!Form::open(array('route' => 'genero.store', 'id' => 'formularioGenero'))!!}
+{{--{!!Form::open(['route' => 'genero.store', 'method' => 'POST'])!!} comentario--}}
 	<div id="msj-success" class="alert alert-success alert-dismissible" role="alert" style="display:none">
-		<strong>Genero Agregado Correctamente.</strong>
+		<strong>Género Agregado Correctamente.</strong>
 	</div>
-	<div id="msj-success2" class="alert alert-success alert-dismissible" role="alert" style="display:none">
-	<strong>Genero Eliminado Correctamente.</strong>
+		<div id="msj-error" class="alert alert-danger alert-dismissible" role="alert" style="display:none">
+		<strong id="msj"></strong>
 	</div>
 	<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
 	@include('genero.form.genero')
@@ -15,3 +16,5 @@
 @section('scripts')
     {!!Html::script('js/script.js')!!}
 @endsection
+
+

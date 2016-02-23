@@ -2,26 +2,21 @@
 namespace Cinema\Http\Controllers;
 use Illuminate\Http\Request;
 use Cinema\Http\Requests;
-use Cinema\Http\Requests\GenreRequest;
 use Cinema\Http\Controllers\Controller;
-use Cinema\Genre;
-class GeneroController extends Controller
+use Mail;
+use Session;
+use Redirect;
+class MailController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function listing(){
-        $genres = Genre::all();
-        return response()->json($genres->toArray());
-    }
-
-    public function index(Request $request)
+    public function index()
     {
-        return view('genero.index');
+        //
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -29,7 +24,7 @@ class GeneroController extends Controller
      */
     public function create()
     {
-        return view('genero.create');
+        //
     }
     /**
      * Store a newly created resource in storage.
@@ -37,13 +32,14 @@ class GeneroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GenreRequest $request)
+    public function store(Request $request)
     {
-        if($request->ajax())
-        {
-            Genre::create($request->all());
-            return response()->json(["mensaje" => "creado"]);
-        }
+        Mail::send('emails.contact',$request->all(), function($msj){
+            $msj->subject('Correo de Contacto');
+            $msj->to('dayannis.y@gmail.com');
+        });
+        Session::flash('message','Mensahe enviado correctamente');
+        return Redirect::to('contacto');
     }
     /**
      * Display the specified resource.
@@ -63,8 +59,7 @@ class GeneroController extends Controller
      */
     public function edit($id)
     {
-        $genre = Genre::find($id);
-        return response()->json($genre->toArray());
+        //
     }
     /**
      * Update the specified resource in storage.
@@ -75,10 +70,7 @@ class GeneroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $genre  = Genre::find($id);//buscar un género con su id
-        $genre -> fill($request -> all());
-        $genre -> save();
-        return response()->json(["mensaje" => "listo"]);
+        //
     }
     /**
      * Remove the specified resource from storage.
@@ -88,7 +80,6 @@ class GeneroController extends Controller
      */
     public function destroy($id)
     {
-        $genre = Genre::destroy($id);
-        return response()->json(["mensaje" => "borrado"]);
+        //
     }
 }

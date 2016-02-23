@@ -1,5 +1,5 @@
-$("#registro").click(function(e){
-	e.preventDefault();
+$("#registro").click(function(){
+	//e.preventDefault();
 	var dato  = $("#genre").val();
 	var route = "http://localhost/cinema/public/index.php/genero";
 	var token = $("#token").val();
@@ -14,14 +14,20 @@ $("#registro").click(function(e){
 			$("#formularioGenero") indicamos que  busque en la vista lo que tenga como id formularioGenero
 			y cuando lo encuentre busque de ese elemento su attributo llamado action con esto attr('action')
 		*/
-		url     : $("#formularioGenero").attr('action'),
-		type    : $("#formularioGenero").attr('method'),
+		//url     : $("#formularioGenero").attr('action'),
+		url     : route,
+		//type    : $("#formularioGenero").attr('method'),
+		type    : 'POST',
 		headers : {'X-CSRF-TOKEN': token},
 		dataType: 'json',
 		data    : {genre: dato},
 
 		success:function(){
 			$("#msj-success").fadeIn();
+		},
+		error:function(msj){
+			$("#msj").html(msj.responseJSON.genre);
+			$("#msj-error").fadeIn();
 		}
-	})
+	});
 });

@@ -17,8 +17,10 @@ Route::get('reviews','FrontController@reviews');
 Route::get('admin','FrontController@admin');
 Route::get('logout','LogController@logout');
 Route::get('generos','GeneroController@listing');
+Route::resource('mail','MailController');
 Route::resource('usuario','UsuarioController');	
 Route::resource('log','LogController'); 
 Route::resource('genero', 'GeneroController');
+Route::resource('pelicula','MovieController');
 
 

@@ -43,10 +43,10 @@ function Mostrar(btn){
 }
 
 /**/
-$("actualizar").click(function(){
-	
+$("#actualizar").click(function(){
+
 	var value = $("#id").val();
-	var dato  = $("#genre");
+	var dato  = $("#genre").val();
 	var route = "http://localhost/cinema/public/index.php/genero/"+value+"";
 	var token = $("#token").val();
 
