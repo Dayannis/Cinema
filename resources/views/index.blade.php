@@ -5,7 +5,7 @@
 				<div class="header">
 			<div class="top-header">
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt="" /></a>
+					<a href="index.html"><img src="{{ asset('images/logo.png') }}" alt="" /></a>
 					<p>Movie Theater</p>
 				</div>
 				<div class="clearfix"></div>
@@ -24,7 +24,7 @@
 				</div>
 				{!!Form::submit('Iniciar',['class'=>'btn btn-primary'])!!}
 				{!!Form::close()!!}
-
+				{!!link_to('password/email',$title = '¿Olvidaste tu contraseña?', $attributes = null, $secure = null)!!}
 			</div>
 		</div>
 		<div class="review-slider">
