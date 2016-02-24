@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 function Carga(){
 	var tablaDatos = $("#datos");
-	var route      = "http://localhost/cinema/public/index.php/generos"
+	var route      = "generos"
 
 	$("#datos").empty();
 	$.get(route, function(res){
@@ -15,7 +15,7 @@ function Carga(){
 }
 
 function Eliminar(btn){
-	var route = "http://localhost/cinema/public/index.php/genero/"+btn.value+"";
+	var route = "genero/"+btn.value+"";
 	var token = $("#token").val();
 
 	$.ajax({
@@ -34,7 +34,7 @@ function Eliminar(btn){
 /*En la siguiente función se muestra el contenido del id correspondiente en el listado de los Generos
 cuando se presiona el botón editar*/
 function Mostrar(btn){
-	var route = "http://localhost/cinema/public/index.php/genero/"+btn.value+"/edit";
+	var route = "genero/"+btn.value+"/edit";
 
 	$.get(route, function(res){
 		$("#genre").val(res.genre);

@@ -1,7 +1,7 @@
 $("#registro").click(function(){
 	//e.preventDefault();
 	var dato  = $("#genre").val();
-	var route = "http://localhost/cinema/public/index.php/genero";
+	var route = "genero";
 	var token = $("#token").val();
 	
 	$.ajax({
