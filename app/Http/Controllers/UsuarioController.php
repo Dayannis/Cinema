@@ -42,11 +42,14 @@ class UsuarioController extends Controller{
 
     public function store(UserCreateRequest $request)
     {
-        User::create([
-            'name'     => $request['name'],
-            'email'    => $request['email'],
-            'password' => bcrypt($request['password'])
-            ]);
+        
+    User::create($request->all()); //Para optimizar codigo se puede realizar de esta forma
+       /*User::create([
+           'name'=> $request['name'],
+           'email'=> $request['email'],
+           'password'=> $request['password'],
+
+           ]);*/
 
         Session::flash('message','Usuario Creado Correctamente');
         return Redirect::to('/usuario');
