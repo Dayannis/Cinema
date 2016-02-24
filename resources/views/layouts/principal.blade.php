@@ -2,13 +2,10 @@
 <html>
 <head>
 <title>Cinema A Entertainment Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
-
 {!!Html::style('css/bootstrap.css')!!}
-<!-- Custom Theme files -->
 {!!Html::style('css/style.css')!!}
 <!-- Custom Theme files -->
 {!!Html::script('js/jquery.min.js')!!}
-
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,8 +21,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="menu">
 				<ul>
 					<li><a class="active" href="{!!URL::to('/')!!}"><i class="home"></i></a></li>
-					<li><a href="{!!URL::to('reviews')!!}"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></a></li>
-					<li><a href="{!!URL::to('contacto')!!}"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></a></li>
+					<li><a href="{!!URL::to('/reviews')!!}"><div class="cat"><i class="watching"></i><i class="watching1"></i></div></a></li>
+					<li><a href="{!!URL::to('/contacto')!!}"><div class="cnt"><i class="contact"></i><i class="contact1"></i></div></a></li>
 				</ul>
 			</div>
 		<div class="main">
@@ -72,6 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		</script>
 		{!!Html::script('js/jquery.flexisel.js')!!}
+		{!!Html::script('js/bootstrap.min.js')!!}
 	<div class="clearfix"></div>
 </body>
 </html>
