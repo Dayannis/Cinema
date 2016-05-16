@@ -14,7 +14,7 @@ class Movie extends Model
         $name = Carbon::now()->second.$path->getClientOriginalName();
         $this->attributes['path'] = $name;
         \Storage::disk('local')->put($name, \File::get($path));
-    }
+        }
     }
     public static function Movies(){
         return DB::table('movies')

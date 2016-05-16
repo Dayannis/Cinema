@@ -18,6 +18,7 @@ class MovieController extends Controller
     }
     public function find(Route $route){
         $this->movie = Movie::find($route->getParameter('pelicula'));
+        $this->notFound($this->movie);
     }
     /**
      * Display a listing of the resource.
@@ -48,8 +49,8 @@ class MovieController extends Controller
     public function store(MovieRequest $request)
     {
         Movie::create([
-            'name'     => $request['name'],
-            'cast'    => $request['cast'],
+            'name'      => $request['name'],
+            'cast'      => $request['cast'],
             'direction' => $request['direction'],
             'duration'  => $request['duration'],
             'path'      => $request['path'],

@@ -1,7 +1,7 @@
 $(document).on('click','.pagination a', function(e){
 	e.preventDefault();
 	var page  = $(this).attr('href').split('page=')[1];
-	var route = "/usuario";
+    var route = "http://localhost/cinema/public/index.php/usuario";
 
 	$.ajax({
 		url      : route,

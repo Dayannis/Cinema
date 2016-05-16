@@ -16,15 +16,17 @@ Route::get('/', ['as' => 'principal', 'uses' => 'FrontController@index']);
 Route::get('contacto','FrontController@contacto');
 Route::get('reviews','FrontController@reviews');
 Route::get('admin','FrontController@admin');
+Route::get('logout','LogController@logout');
+Route::get('generos','GeneroController@listing');
 Route::get('password/email','Auth\PasswordController@getEmail');
-Route::post('password/email','Auth\PasswordController@postEmail');
 Route::get('password/reset/{token}','Auth\PasswordController@getReset');
 Route::post('password/reset','Auth\PasswordController@postReset');
+Route::post('password/email','Auth\PasswordController@postEmail');
 Route::resource('mail','MailController');
 Route::resource('usuario','UsuarioController');
 Route::resource('genero','GeneroController');
 Route::resource('pelicula','MovieController');
 Route::resource('log','LogController');
-Route::get('logout','LogController@logout');
+
 
 

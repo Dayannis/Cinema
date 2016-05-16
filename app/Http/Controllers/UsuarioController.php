@@ -13,9 +13,6 @@ use Illuminate\Routing\Route;
 
 class UsuarioController extends Controller{
 
-   /* public function __construct(){
-        $this->middleware('auth');
-    }*/
     public function __construct(){
         $this->middleware('auth');
         $this->middleware('admin');
@@ -24,6 +21,7 @@ class UsuarioController extends Controller{
 
     public function find(Route $route){
         $this->user=User::find($route->getParameter('usuario'));
+        $this->notFound($this->user);
     }
     public function index(Request $request)
     {
